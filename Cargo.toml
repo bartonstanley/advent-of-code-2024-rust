@@ -4,9 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-anyhow = "1.0.93"
+anyhow = "1.0.94"
 code-timing-macros = { version = "0.0.5", features = ["release"] }
 const_format = "0.2.33"
+polars = { version="0.44.2", features=["lazy"]}
 
 # Additional recommended dependencies
 itertools = "0.13.0"

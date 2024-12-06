@@ -15,27 +15,23 @@ const TEST: &str = "\
 fn main() -> Result<()> {
     start_day(DAY);
 
-    //region Part 1
     println!("=== Part 1 ===");
+
+    fn part1<R: BufRead>(reader: R) -> Result<usize> {
+        // TODO: Solve Part 1 of the puzzle
+        let answer = reader.lines().flatten().count();
+        Ok(answer)
+    }
 
     // TODO: Set the expected answer for the test input
     assert_eq!(0, part1(BufReader::new(TEST.as_bytes()))?);
     
     println!("test passed");
 
-    fn part1<R: BufRead>(mut reader: R) -> Result<usize> {
-        let mut contents = String::new();
-        reader.read_to_string(&mut contents)?;
-        let answer = contents.lines().count();
-        Ok(answer)
-    }
-
     let input_file = BufReader::new(File::open(INPUT_FILE)?);
     let result = time_snippet!(part1(input_file)?);
     println!("Result = {}", result);
-    //endregion
 
-    //region Part 2
     // println!("\n=== Part 2 ===");
     //
     // fn part2<R: BufRead>(reader: R) -> Result<usize> {
